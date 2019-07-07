@@ -1,6 +1,7 @@
 from tkinter import *
 
 master = Tk()
+#Defines
 #extras
 def Game():
     with open ('test.txt', 'a') as w:
@@ -122,13 +123,10 @@ def Found():
 def Chased():
     with open ('test.txt', 'a') as w:
         w.write('\nHe Chased the enemy ')
+#Damage
 def Killed():
     with open ('test.txt', 'a') as w:
         w.write('\nHe Killed the enemy ')
-def Died():
-    with open ('test.txt', 'a') as w:
-        w.write('\nHe Died \nRespawned\n ')
-#Damage
 def Pick29():
     with open ('test.txt', 'a') as w:
         w.write('\nHe did damage (29-) ')
@@ -148,6 +146,9 @@ def Pick250():
     with open ('test.txt', 'a') as w:
         w.write('\nHe did damage (250+) ')
 #Damage Taken
+def Died():
+    with open ('test.txt', 'a') as w:
+        w.write('\nHe Died \nRespawned\n ')
 def Took29():
     with open ('test.txt', 'a') as w:
         w.write('\nHe took 29- Damage ')
@@ -225,6 +226,9 @@ def Champions():
 def Weapons():
     with open ('test.txt', 'a') as w:
         w.write('')
+def Action():
+    with open ('test.txt', 'a') as w:
+        w.write('')
 def Stacking():
     with open ('test.txt', 'a') as w:
         w.write('')
@@ -240,8 +244,7 @@ def CurHealth():
 def CurArmor():
     with open ('test.txt', 'a') as w:
         w.write('')
-
-
+        
 #BUTTONS
 #extra buttons
 Extras = Button(master, text="Extras", command=Extras, bg="white")
@@ -274,8 +277,6 @@ Slash = Button(master, text="Slash", command=Slash, bg="orange")
 Sorlag = Button(master, text="Sorlag", command=Sorlag, bg="orange")
 SP = Button(master, text="Strogg & Peeker", command=SP, bg="orange")
 Visor = Button(master, text="Visor", command=Visor, bg="orange")
-
-
 #weapon buttons
 Weapons = Button(master, text="Weapons", command=Weapons, bg="yellow")
 RL = Button(master, text="Rocket Launcher", command=RL, bg="yellow")
@@ -285,6 +286,10 @@ NG = Button(master, text="Nail Gun", command=NG, bg="yellow")
 SG = Button(master, text="Shot Gun", command=SG, bg="yellow")
 MG = Button(master, text="Machine Gun", command=MG, bg="yellow")
 Tribolt = Button(master, text="Tri-Bolt", command=Tribolt, bg="yellow")
+#Actions
+Action = Button(master, text="Actions", command=Action, bg="#e042f5")
+Found = Button(master, text="Found", command=Found, bg="#e042f5")
+Chased = Button(master, text="Chased", command=Chased, bg="#e042f5")
 #stacking buttons
 Stacking = Button(master, text="Stacking", command=Stacking, bg="#5D8AA8")
 Mega = Button(master, text="Mega", command=Mega, bg="#5D8AA8")
@@ -293,6 +298,7 @@ Health = Button(master, text="Health", command=Health, bg="#5D8AA8")
 Armor = Button(master, text="Armor", command=Armor, bg="#5D8AA8")
 #damage buttons
 Damage = Button(master, text="Damage", command=Damage, bg="#FA4047")
+Killed = Button(master, text="Killed", command=Killed, bg="#FA4047")
 Pick29 = Button(master, text="Picked 29-", command=Pick29, bg="#FA4047")
 Pick30 = Button(master, text="Picked 30+", command=Pick30, bg="#FA4047")
 Pick90 = Button(master, text="Picked 90+", command=Pick90, bg="#FA4047")
@@ -317,8 +323,6 @@ Health150 = Button(master, text="150+", command=Health150, bg="#7A0CD2")
 Health200 = Button(master, text="200+", command=Health200, bg="#7A0CD2")
 Health250 = Button(master, text="250+", command=Health250, bg="#7A0CD2")
 Health300 = Button(master, text="300+", command=Health300, bg="#7A0CD2")
-
-
 #armor buttons
 CurArmor = Button(master, text="Current Armor", command=CurArmor, bg="#008040")
 Armor0 = Button(master, text="0", command=Armor0, bg="#008040")
@@ -329,7 +333,6 @@ Armor150 = Button(master, text="150+", command=Armor150, bg="#008040")
 Armor200 = Button(master, text="200+", command=Armor200, bg="#008040")
 Armor250 = Button(master, text="250+", command=Armor250, bg="#008040")
 Armor300 = Button(master, text="300+", command=Armor300, bg="#008040")
-
 #Grid
 #extras grids
 Extras.grid(column=1, row=0, sticky="ew")
@@ -371,55 +374,52 @@ NG.grid(column=4, row=4, sticky="ew")
 SG.grid(column=4, row=5, sticky="ew")
 MG.grid(column=4, row=6, sticky="ew")
 Tribolt.grid(column=4, row=7, sticky="ew")
+#Actions
+Action.grid(column=5, row=0, sticky="ew")
+Found.grid(column=5, row=1, sticky="ew")
+Chased.grid(column=5, row=2, sticky="ew")
 #stacking Grids
-Stacking.grid(column=5, row=0, sticky="ew")
-Mega.grid(column=5, row=1, sticky="ew")
-Heavy.grid(column=5, row=2, sticky="ew")
-Health.grid(column=5, row=3, sticky="ew")
-Armor.grid(column=5, row=4, sticky="ew")
+Stacking.grid(column=6, row=0, sticky="ew")
+Mega.grid(column=6, row=1, sticky="ew")
+Heavy.grid(column=6, row=2, sticky="ew")
+Health.grid(column=6, row=3, sticky="ew")
+Armor.grid(column=6, row=4, sticky="ew")
 #Damage Grids
-Damage.grid(column=6, row=0, sticky="ew")
-Pick29.grid(column=6, row=1, sticky="ew")
-Pick30.grid(column=6, row=2, sticky="ew")
-Pick90.grid(column=6, row=3, sticky="ew")
-Pick150.grid(column=6, row=4, sticky="ew")
-Pick200.grid(column=6, row=5, sticky="ew")
-Pick250.grid(column=6, row=6, sticky="ew")
+Damage.grid(column=7, row=0, sticky="ew")
+Killed.grid(column=7, row=1, sticky="ew")
+Pick29.grid(column=7, row=2, sticky="ew")
+Pick30.grid(column=7, row=3, sticky="ew")
+Pick90.grid(column=7, row=4, sticky="ew")
+Pick150.grid(column=7, row=5, sticky="ew")
+Pick200.grid(column=7, row=6, sticky="ew")
+Pick250.grid(column=7, row=7, sticky="ew")
 #Damage Taken Grids
-DamageT.grid(column=7, row=0, sticky="ew")
-Died.grid(column=7, row=1, sticky="ew")
-Took29.grid(column=7, row=2, sticky="ew")
-Took30.grid(column=7, row=3, sticky="ew")
-Took90.grid(column=7, row=4, sticky="ew")
-Took150.grid(column=7, row=5, sticky="ew")
-Took200.grid(column=7, row=6, sticky="ew")
-Took250.grid(column=7, row=7, sticky="ew")
+DamageT.grid(column=8, row=0, sticky="ew")
+Died.grid(column=8, row=1, sticky="ew")
+Took29.grid(column=8, row=2, sticky="ew")
+Took30.grid(column=8, row=3, sticky="ew")
+Took90.grid(column=8, row=4, sticky="ew")
+Took150.grid(column=8, row=5, sticky="ew")
+Took200.grid(column=8, row=6, sticky="ew")
+Took250.grid(column=8, row=7, sticky="ew")
 #Health Grids
-CurHealth.grid(column=8, row=0, sticky="ew")
-Health49.grid(column=8, row=1, sticky="ew")
-Health50.grid(column=8, row=2, sticky="ew")
-Health100.grid(column=8, row=3, sticky="ew")
-Health150.grid(column=8, row=4, sticky="ew")
-Health200.grid(column=8, row=5, sticky="ew")
-Health250.grid(column=8, row=6, sticky="ew")
-Health300.grid(column=8, row=7, sticky="ew")
+CurHealth.grid(column=9, row=0, sticky="ew")
+Health49.grid(column=9, row=1, sticky="ew")
+Health50.grid(column=9, row=2, sticky="ew")
+Health100.grid(column=9, row=3, sticky="ew")
+Health150.grid(column=9, row=4, sticky="ew")
+Health200.grid(column=9, row=5, sticky="ew")
+Health250.grid(column=9, row=6, sticky="ew")
+Health300.grid(column=9, row=7, sticky="ew")
 #Armor Grids
-CurArmor.grid(column=9, row=0, sticky="ew")
-Armor0.grid(column=9, row=1, sticky="ew")
-Armor49.grid(column=9, row=2, sticky="ew")
-Armor50.grid(column=9, row=3, sticky="ew")
-Armor100.grid(column=9, row=4, sticky="ew")
-Armor150.grid(column=9, row=5, sticky="ew")
-Armor200.grid(column=9, row=6, sticky="ew")
-Armor250.grid(column=9, row=7, sticky="ew")
-Armor300.grid(column=9, row=8, sticky="ew")
-
-
-
-
-
-
-#PACKING
-
+CurArmor.grid(column=10, row=0, sticky="ew")
+Armor0.grid(column=10, row=1, sticky="ew")
+Armor49.grid(column=10, row=2, sticky="ew")
+Armor50.grid(column=10, row=3, sticky="ew")
+Armor100.grid(column=10, row=4, sticky="ew")
+Armor150.grid(column=10, row=5, sticky="ew")
+Armor200.grid(column=10, row=6, sticky="ew")
+Armor250.grid(column=10, row=7, sticky="ew")
+Armor300.grid(column=10, row=8, sticky="ew")
 #THE MAIN LOOP
 mainloop()
